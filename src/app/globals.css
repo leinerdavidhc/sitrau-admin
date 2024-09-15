@@ -2,32 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Modo claro (light mode) */
+    --background: 228 56% 98%; /* Principal para light */
+    --foreground: 220 29% 6%;  /* Letras para light */
+
+    --card: 228 56% 98%; /* Principal para light */
+    --card-foreground: 220 29% 6%;  /* Letras para light */
+
+    --popover: 228 56% 98%; /* Principal para light */
+    --popover-foreground: 220 29% 6%;  /* Letras para light */
+
+    --primary: 228 56% 98%; /* Principal para light */
+    --primary-foreground: 220 29% 6%; /* Letras para light */
+
+    --secondary: 220 29% 6%; /* Secundario para light */
+    --secondary-foreground: 228 56% 98%; /* Letras para light */
+
+    --tertiary-dark:225 20% 8%;
+    --tertiary-light: 225 8% 91%;
+
+    --muted: 228 20% 95%; /* Secundario para light */
+    --muted-foreground: 220 29% 6%; /* Letras para light */
+
+    --accent: 19 90% 54%; /* Terciario claro */
+    --accent-foreground: 220 29% 6%;  /* Letras para light */
+
+    --destructive: 19 92% 48%; /* Terciario (Focus/Hover) */
+    --destructive-foreground: 220 29% 6%; /* Letras para light */
+
+    --border: 228 20% 95%; /* Secundario para light */
+    --input: 228 20% 95%; /* Secundario para light */
+    --ring: 19 92% 48%; /* Terciario (Focus/Hover) */
+
+    --radius: 0.5rem;
+  }
+
+  /* Modo oscuro (dark mode) */
+  .dark {
+    --background: 220 29% 6%; /* Principal para dark */
+    --foreground: 228 56% 98%; /* Letras para dark */
+
+    --card: 220 29% 6%; /* Principal para dark */
+    --card-foreground: 228 56% 98%; /* Letras para dark */
+
+    --popover: 220 29% 6%; /* Principal para dark */
+    --popover-foreground: 228 56% 98%; /* Letras para dark */
+
+    --primary: 220 29% 6%; /* Principal para dark */
+    --primary-foreground: 228 56% 98%; /* Letras para dark */
+
+    --secondary: 228 56% 98%; /* Secundario para dark */
+    --secondary-foreground: 220 29% 6%; /* Letras para dark */
+
+    --tertiary-dark:225 20% 8%;
+    --tertiary-light: 225 8% 91%;
+
+    --muted: 227 26% 7%; /* Secundario para dark */
+    --muted-foreground: 228 56% 98%; /* Letras para dark */
+
+    --accent: 19 90% 54%; /* Terciario claro */
+    --accent-foreground: 228 56% 98%; /* Letras para dark */
+
+    --destructive: 19 92% 48%; /* Terciario (Focus/Hover) */
+    --destructive-foreground: 228 56% 98%; /* Letras para dark */
+
+    --border: 227 26% 7%; /* Secundario para dark */
+    --input: 227 26% 7%; /* Secundario para dark */
+    --ring: 19 92% 48%; /* Terciario (Focus/Hover) */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
